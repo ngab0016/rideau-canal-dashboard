@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rideau Canal // NET_MONITOR</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="bg-grid"></div>
+
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fa-solid fa-snowflake fa-spin-pulse" style="--fa-animation-duration: 3s;"></i> RIDEAU_OS <span class="version">v2.4</span></h1>
+                <p class="subtitle">ICE_INTEGRITY_MONITOR // NCC_LINK_ESTABLISHED</p>
+            </div>
+            <div class="system-status" id="systemStatus">
+                <div class="status-badge-wrapper">
+                    <span class="status-label">SYS_STATUS:</span>
+                    <span class="status-value" id="overallStatus">INITIALIZING...</span>
+                </div>
+                <div class="last-update">
+                    SYNC: <span id="lastUpdate">--:--:--</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="locations-grid" id="locationsGrid">
+            <div class="loading">
+                <i class="fa-solid fa-circle-notch fa-spin"></i> ACQUIRING SENSOR TELEMETRY...
+            </div>
+        </section>
+
+        <section class="charts-section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-chart-area"></i> HISTORICAL_METRICS</h2>
+                <div class="chart-controls">
+                    <label for="locationSelect">SENSOR_NODE:</label>
+                    <select id="locationSelect">
+                        <option value="Dow's Lake">NODE_01: DOW'S LAKE</option>
+                        <option value="Fifth Avenue">NODE_02: FIFTH AVE</option>
+                        <option value="NAC">NODE_03: NAC</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <canvas id="iceThicknessChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>CST8916 // SECURE_CONNECTION</p>
+            <p>REFRESH_RATE: 30000ms</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
